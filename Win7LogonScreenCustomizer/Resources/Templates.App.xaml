@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- New GroupBox Header ControlTemplate -->
+    <BorderGapMaskConverter x:Key="BorderGapMaskConverter"/>
+    
+    <ControlTemplate x:Key="GroupBoxNewHeaderControlTemplate" TargetType="GroupBox">
+        <Grid SnapsToDevicePixels="true">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="6"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="6"/>
+            </Grid.ColumnDefinitions>
+            
+            <Border Grid.Row="1" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="4" Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4"/>
+            <ContentPresenter Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+            <Border Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4" BorderBrush="White" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4">
+                <Border.OpacityMask>
+                    <MultiBinding Converter="{StaticResource BorderGapMaskConverter}" ConverterParameter="7">
+                        <Binding Path="ActualWidth" ElementName="Header"/>
+                        <Binding Path="ActualWidth" RelativeSource="{RelativeSource Self}"/>
+                        <Binding Path="ActualHeight" RelativeSource="{RelativeSource Self}"/>
+                    </MultiBinding>
+                </Border.OpacityMask>
+                <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                    <Border BorderBrush="White" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2"/>
+                </Border>
+            </Border>
+            <Border x:Name="Header" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Padding="3,1,3,0">
+                <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" ContentSource="Header" RecognizesAccessKey="True"/>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+
+</ResourceDictionary>
