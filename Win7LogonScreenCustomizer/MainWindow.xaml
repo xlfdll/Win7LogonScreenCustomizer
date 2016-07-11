@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Win7LogonScreenCustomizer"
         mc:Ignorable="d"
-        Title="Windows 7 Logon Screen Customizer" Icon="pack://application:,,,/Logon.ico"
+        Title="Windows 7 Logon Screen Customizer" Icon="pack://application:,,,/Win7LogonScreenCustomizer.ico"
         WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"
         Width="480" SizeToContent="Height"
         Loaded="MainWindow_Loaded">

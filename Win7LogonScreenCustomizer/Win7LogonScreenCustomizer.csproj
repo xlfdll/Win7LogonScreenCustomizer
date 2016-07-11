@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Logon.ico</ApplicationIcon>
+    <ApplicationIcon>Win7LogonScreenCustomizer.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -106,7 +106,7 @@
     <Resource Include="Images\background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Logon.ico" />
+    <Resource Include="Win7LogonScreenCustomizer.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
