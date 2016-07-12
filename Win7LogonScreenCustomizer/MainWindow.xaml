@@ -59,9 +59,6 @@
                     </Grid>
 
                     <GroupBox Grid.Row="1">
-                        <GroupBox.Resources>
-                            <BitmapImage x:Key="DefaultBackgroundImage" UriSource="pack://application:,,,/Images/background.jpg"/>
-                        </GroupBox.Resources>
                         <GroupBox.Style>
                             <Style TargetType="GroupBox">
                                 <Setter Property="Template" Value="{StaticResource GroupBoxNewHeaderControlTemplate}"/>
@@ -79,6 +76,7 @@
                                     <Setter Property="BorderThickness" Value="1"/>
                                     <Setter Property="Margin" Value="5"/>
                                 </Style>
+                                <BitmapImage x:Key="DefaultBackgroundImage" UriSource="pack://application:,,,/Images/background.jpg"/>
                             </Grid.Resources>
                             <Grid.Style>
                                 <Style TargetType="Grid">
