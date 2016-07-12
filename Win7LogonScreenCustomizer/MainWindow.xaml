@@ -6,29 +6,28 @@
         xmlns:local="clr-namespace:Win7LogonScreenCustomizer"
         mc:Ignorable="d"
         Title="Windows 7 Logon Screen Customizer" Icon="pack://application:,,,/Win7LogonScreenCustomizer.ico"
-        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"
-        Width="480" SizeToContent="Height"
-        Loaded="MainWindow_Loaded">
-
-    <Window.Resources>
-        <BitmapImage x:Key="DefaultBackgroundImage" UriSource="pack://application:,,,/Images/background.jpg"/>
-
-        <Style TargetType="Grid">
-            <Setter Property="Margin" Value="5"/>
-        </Style>
-        <Style TargetType="CheckBox">
-            <Setter Property="Margin" Value="3"/>
-        </Style>
-        <Style TargetType="TextBox">
-            <Setter Property="Margin" Value="3"/>
-        </Style>
-        <Style TargetType="Button">
-            <Setter Property="Margin" Value="3"/>
-            <Setter Property="Padding" Value="5"/>
-        </Style>
-    </Window.Resources>
+        Width="480" SizeToContent="Height" WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize" Loaded="MainWindow_Loaded">
 
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="Grid">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+            <Style TargetType="CheckBox">
+                <Setter Property="Margin" Value="3"/>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="Margin" Value="3"/>
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="3"/>
+                <Setter Property="Padding" Value="5"/>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
@@ -60,6 +59,9 @@
                     </Grid>
 
                     <GroupBox Grid.Row="1">
+                        <GroupBox.Resources>
+                            <BitmapImage x:Key="DefaultBackgroundImage" UriSource="pack://application:,,,/Images/background.jpg"/>
+                        </GroupBox.Resources>
                         <GroupBox.Style>
                             <Style TargetType="GroupBox">
                                 <Setter Property="Template" Value="{StaticResource GroupBoxNewHeaderControlTemplate}"/>
@@ -71,6 +73,13 @@
                         </GroupBox.Header>
 
                         <Grid DataContext="{Binding Path=BackgroundInfo}">
+                            <Grid.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="BorderBrush" Value="Gray"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="Margin" Value="5"/>
+                                </Style>
+                            </Grid.Resources>
                             <Grid.Style>
                                 <Style TargetType="Grid">
                                     <Style.Triggers>
@@ -80,13 +89,6 @@
                                     </Style.Triggers>
                                 </Style>
                             </Grid.Style>
-                            <Grid.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="BorderBrush" Value="Gray"/>
-                                    <Setter Property="BorderThickness" Value="1"/>
-                                    <Setter Property="Margin" Value="5"/>
-                                </Style>
-                            </Grid.Resources>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="128"/>
                             </Grid.RowDefinitions>
@@ -135,11 +137,6 @@
                     </GroupBox>
 
                     <Grid Grid.Row="2">
-                        <Grid.Resources>
-                            <Style TargetType="ComboBox">
-                                <Setter Property="VerticalContentAlignment" Value="Center"/>
-                            </Style>
-                        </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition/>
