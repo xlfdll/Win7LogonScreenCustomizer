@@ -154,7 +154,7 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="100"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -167,7 +167,8 @@
                              Text="{Binding Path=MessageCaption, UpdateSourceTrigger=Explicit}"/>
 
                     <Label Grid.Row="1" Grid.Column="0" Content="_Text"/>
-                    <TextBox Name="LogonMessageTextBox" Grid.Row="1" Grid.Column="1" MinLines="5" AcceptsReturn="True"
+                    <TextBox Name="LogonMessageTextBox" Grid.Row="1" Grid.Column="1"
+                             AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
                              Text="{Binding Path=MessageText, UpdateSourceTrigger=Explicit}"/>
 
                     <CheckBox Name="DisplayLastLogonStatusCheckBox" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="_Display Last Logon Status"
