@@ -3,6 +3,8 @@ using System.Windows;
 
 using Microsoft.Win32;
 
+using Xlfdll.Windows.Presentation;
+
 namespace Win7LogonScreenCustomizer
 {
     public class LogonScreenState : ObservableObject
@@ -98,17 +100,9 @@ namespace Win7LogonScreenCustomizer
         {
             get
             {
-                PresentationSource presentationSource = PresentationSource.FromVisual(Application.Current.MainWindow);
+                Size screenResolution = SystemState.GetScreenResolution(PresentationSource.FromVisual(Application.Current.MainWindow));
 
-                if (presentationSource != null)
-                {
-                    Int32 screenWidth = Convert.ToInt32(SystemParameters.PrimaryScreenWidth * presentationSource.CompositionTarget.TransformToDevice.M11);
-                    Int32 screenHeight = Convert.ToInt32(SystemParameters.PrimaryScreenHeight * presentationSource.CompositionTarget.TransformToDevice.M22);
-
-                    return screenWidth.ToString() + " * " + screenHeight.ToString();
-                }
-
-                return null;
+                return screenResolution.Width.ToString("F0") + " * " + screenResolution.Height.ToString("F0");
             }
         }
 
