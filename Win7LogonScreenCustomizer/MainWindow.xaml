@@ -65,7 +65,7 @@
                             </Style>
                         </GroupBox.Style>
                         <GroupBox.Header>
-                            <CheckBox Name="EnableCustomLogonBackgroundCheckBox" Content="Enable Custom Logon Back_ground"
+                            <CheckBox x:Name="EnableCustomLogonBackgroundCheckBox" Content="Enable Custom Logon Back_ground"
                                       IsChecked="{Binding Path=IsCustomBackgroundEnabled, UpdateSourceTrigger=Explicit}"/>
                         </GroupBox.Header>
 
@@ -141,7 +141,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Grid.Column="0" Content="Button _Style"/>
-                        <ComboBox Name="LogonButtonStyleComboBox" Grid.Column="1"
+                        <ComboBox x:Name="LogonButtonStyleComboBox" Grid.Column="1"
                                   SelectedIndex="{Binding Path=ButtonStyle, UpdateSourceTrigger=Explicit}">
                             <ComboBoxItem Content="Light text shadows &amp; dark buttons (Default)"/>
                             <ComboBoxItem Content="Dark text shadows &amp; light buttons"/>
@@ -163,15 +163,15 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0" Content="_Caption"/>
-                    <TextBox Name="LogonMessageCaptionTextBox" Grid.Row="0" Grid.Column="1"
+                    <TextBox x:Name="LogonMessageCaptionTextBox" Grid.Row="0" Grid.Column="1"
                              Text="{Binding Path=MessageCaption, UpdateSourceTrigger=Explicit}"/>
 
                     <Label Grid.Row="1" Grid.Column="0" Content="_Text"/>
-                    <TextBox Name="LogonMessageTextBox" Grid.Row="1" Grid.Column="1"
+                    <TextBox x:Name="LogonMessageTextBox" Grid.Row="1" Grid.Column="1"
                              AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
                              Text="{Binding Path=MessageText, UpdateSourceTrigger=Explicit}"/>
 
-                    <CheckBox Name="DisplayLastLogonStatusCheckBox" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="_Display Last Logon Status"
+                    <CheckBox x:Name="DisplayLastLogonStatusCheckBox" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="_Display Last Logon Status"
                               IsChecked="{Binding Path=DisplayLastLogonInfo, UpdateSourceTrigger=Explicit}"/>
                 </Grid>
             </TabItem>
