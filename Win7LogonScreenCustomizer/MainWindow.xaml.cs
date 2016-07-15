@@ -38,9 +38,7 @@ namespace Win7LogonScreenCustomizer
 
             if (dlg.ShowDialog(this) == true)
             {
-                LogonScreenState state = this.DataContext as LogonScreenState;
-
-                state.BackgroundInfo = new LogonBackgroundInfo(dlg.FileName);
+                LogonScreenState.Current.BackgroundInfo = new LogonBackgroundInfo(dlg.FileName);
             }
         }
 
@@ -53,12 +51,10 @@ namespace Win7LogonScreenCustomizer
             LogonMessageTextBox.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             DisplayLastLogonStatusCheckBox.GetBindingExpression(CheckBox.IsCheckedProperty).UpdateSource();
 
-            LogonScreenState state = this.DataContext as LogonScreenState;
-
-            if (state.IsCustomBackgroundEnabled && state.BackgroundInfo != null
-                && !state.BackgroundInfo.ImageFileInfo.FullName.Equals(BackgroundHelper.OOBEBackgroundImageFullPath))
+            if (LogonScreenState.Current.IsCustomBackgroundEnabled && LogonScreenState.Current.BackgroundInfo != null
+                && !LogonScreenState.Current.BackgroundInfo.ImageFileInfo.FullName.Equals(BackgroundHelper.OOBEBackgroundImageFullPath))
             {
-                BackgroundHelper.SetBackgroundImage(state.BackgroundInfo);
+                BackgroundHelper.SetBackgroundImage(LogonScreenState.Current.BackgroundInfo);
             }
 
             MessageBox.Show(this, "New logon customizations have been saved." + Environment.NewLine + "Press Win+L to preview.",
@@ -73,15 +69,13 @@ namespace Win7LogonScreenCustomizer
 
             if (result == MessageBoxResult.Yes)
             {
-                LogonScreenState state = this.DataContext as LogonScreenState;
+                LogonScreenState.Current.IsCustomBackgroundEnabled = false;
+                LogonScreenState.Current.BackgroundInfo = null;
+                LogonScreenState.Current.ButtonStyle = 0;
 
-                state.IsCustomBackgroundEnabled = false;
-                state.BackgroundInfo = null;
-                state.ButtonStyle = 0;
-
-                state.MessageCaption = String.Empty;
-                state.MessageText = String.Empty;
-                state.DisplayLastLogonInfo = false;
+                LogonScreenState.Current.MessageCaption = String.Empty;
+                LogonScreenState.Current.MessageText = String.Empty;
+                LogonScreenState.Current.DisplayLastLogonInfo = false;
 
                 if (File.Exists(BackgroundHelper.OOBEBackgroundImageFullPath))
                 {

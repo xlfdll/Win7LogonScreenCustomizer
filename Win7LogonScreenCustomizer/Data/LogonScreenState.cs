@@ -7,6 +7,11 @@ namespace Win7LogonScreenCustomizer
 {
     public class LogonScreenState : ObservableObject
     {
+        public LogonScreenState()
+        {
+            LogonScreenState.Current = this;
+        }
+
         private LogonBackgroundInfo _backgroundInfo;
 
         public LogonBackgroundInfo BackgroundInfo
@@ -106,5 +111,7 @@ namespace Win7LogonScreenCustomizer
                 return null;
             }
         }
+
+        public static LogonScreenState Current { get; private set; }
     }
 }
