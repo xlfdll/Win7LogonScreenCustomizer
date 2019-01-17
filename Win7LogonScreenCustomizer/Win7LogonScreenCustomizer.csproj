@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="..\BuildInfo.cs">
+      <Link>BuildInfo.cs</Link>
+    </Compile>
     <Compile Include="..\XDLibrary\Xlfdll.Windows.Presentation\SystemState.cs">
       <Link>Base\Windows\Presentation\SystemState.cs</Link>
     </Compile>
