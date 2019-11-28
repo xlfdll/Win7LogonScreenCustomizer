@@ -19,12 +19,12 @@ namespace Win7LogonScreenCustomizer
 
         #region Registry Key Names
 
-        public static readonly String BackgroundRegistryKeyName = "UseOEMBackground";
-        public static readonly String ButtonStyleRegistryKeyName = "ButtonSet";
+        public const String BackgroundRegistryKeyName = "UseOEMBackground";
+        public const String ButtonStyleRegistryKeyName = "ButtonSet";
 
-        public static readonly String MessageCaptionRegistryKeyName = "legalnoticecaption";
-        public static readonly String MessageTextRegistryKeyName = "legalnoticetext";
-        public static readonly String DisplayLastLogonInfoRegistryKeyName = "DisplayLastLogonInfo";
+        public const String MessageCaptionRegistryKeyName = "legalnoticecaption";
+        public const String MessageTextRegistryKeyName = "legalnoticetext";
+        public const String DisplayLastLogonInfoRegistryKeyName = "DisplayLastLogonInfo";
 
         #endregion
     }
