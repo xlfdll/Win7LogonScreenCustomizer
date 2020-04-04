@@ -17,8 +17,8 @@ namespace Win7LogonScreenCustomizer
                 File.Delete(BackgroundHelper.OOBEBackgroundImageFullPath);
             }
 
-            if ((logonBackgroundInfo.ImageFileInfo.Extension.Equals(".jpg", StringComparison.CurrentCultureIgnoreCase)
-                || logonBackgroundInfo.ImageFileInfo.Extension.Equals(".jpeg", StringComparison.CurrentCultureIgnoreCase))
+            if ((logonBackgroundInfo.ImageFileInfo.Extension.Equals(".jpg", StringComparison.OrdinalIgnoreCase)
+                || logonBackgroundInfo.ImageFileInfo.Extension.Equals(".jpeg", StringComparison.OrdinalIgnoreCase))
                 && logonBackgroundInfo.ImageFileInfo.Length <= BackgroundHelper.OOBEBackgroundImageFileSizeLimit)
             {
                 File.Copy(logonBackgroundInfo.ImageFileInfo.FullName, BackgroundHelper.OOBEBackgroundImageFullPath);
