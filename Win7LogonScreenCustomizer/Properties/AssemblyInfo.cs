@@ -12,7 +12,7 @@ using Xlfdll;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Xlfdll Workstation")]
 [assembly: AssemblyProduct("Windows 7 Logon Screen Customizer")]
-[assembly: AssemblyCopyright("© 2016 Xlfdll Workstation")]
+[assembly: AssemblyCopyright("© 2012-2016 Xlfdll Workstation")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
